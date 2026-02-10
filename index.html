@@ -15,7 +15,7 @@
     <!-- navbar -->
     <nav class="navbar" id="nav">
         <div class="container">
-            <h1 class="navbar-brand">Taza news</h1>
+            <h1 class="navbar-brand text-uppercase text-light fw-bolder fs-2">Taza News</h1>
             <div class="d-flex" role="search">
                 <input id="inputVal" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                 <button id="searchBtn" class="btn btn-outline-light" type="submit">Search</button>
@@ -25,11 +25,11 @@
     <!-- navbar -->
 
 
-    <div class="container mt-5 mb-5">
-        <div id="newsBox" class="row gap-5 justify-content-center">
+    <div id="mainContetnContainer" class="container-lg-fluid mt-5 mb-5">
+        <div id="newsBox" class="row w-100 gap-4 justify-content-center">
 
-            <h1 id="trndingNews">top trending news</h1>
-        <!-- <div class="card col-3" style="width: 18rem;">
+            <!-- <h1 id="trndingNews">top trending news</h1> -->
+            <!-- <div class="card col-3" style="width: 18rem;">
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/97/predator-ride-in-the.jpg?w=900&h=500&s=1" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -39,9 +39,19 @@
             </div>
         </div> -->
 
-       
 
+
+        </div>
     </div>
+
+    <div class="myLoader">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
     </div>
 
 
@@ -49,7 +59,9 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js" integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js"
+        integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
     <script src="app.js"></script>

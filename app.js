@@ -1,8 +1,4 @@
-// endppoint url = "https://gnews.io/api/v4/search?q=example&apikey=API_KEY" 
-//top headlines = "https://gnews.io/api/v4/top-headlines?category=general&apikey=API_KEY"
-const apiKey = "39f9670b647c1b7cba12d9aed12f51e3";
 
-// let inputVal = document.getElementById("inputVal")
 let searchBtn = document.getElementById("searchBtn")
 let mainContetnContainer = document.querySelector("#mainContetnContainer")
 let myLoader = document.querySelector(".myLoader")
@@ -51,7 +47,7 @@ function renderData(data, input) {
 
 
 function renderCards(data) {
-  return data.map(news => `
+    return data.map(news => `
     <div class="card col-3" style="width: 18rem;">
       <img src="${news.urlToImage || ''}" class="card-img-top" alt="news image not working">
       <div class="card-body">
@@ -93,8 +89,17 @@ function renderPagination() {
 searchBtn.addEventListener("click", function () {
     let inputVal = document.getElementById("inputVal")
 
-    if (inputVal) {
+    if (inputVal.value) {
         callApi(inputVal.value)
+    } else {
+
+        alertbox.render({
+            alertIcon: 'warning',
+            title: 'Please write properly',
+            btnTitle: 'Ok',
+            border: true,
+            themeColor: 'rgb(191, 119, 42)'
+        });
     }
 })
 

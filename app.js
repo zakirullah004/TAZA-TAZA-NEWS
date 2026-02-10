@@ -9,10 +9,20 @@ let callApi = async (input) => {
 
     let api = input ? `https://newsapi.org/v2/everything?q=${input}&pageSize=12&page=${page ? page : "1"}&apiKey=64593835334442299b0c95aeef93bc04` : `https://newsapi.org/v2/top-headlines?country=us&pageSize=13&page=${page ? page : "1"}&apiKey=64593835334442299b0c95aeef93bc04`
     mainContetnContainer.style.display = "none";
+    mainContetnContainer.style.display = "none";
     myLoader.style.display = "flex";
 
     const call = await fetch(api)
     const response = await call.json()
+    console.log(response);
+
+    const { totalResults } = response
+
+    if (totalResults == 0) {
+        mainContetnContainer.style.display = "block";
+        noDataFound(`No data found related to ${input}`)
+        return
+    }
 
     const { articles } = response
 
@@ -103,7 +113,14 @@ searchBtn.addEventListener("click", function () {
     }
 })
 
+function noDataFound(dataMsg) {
+    myLoader.style.display = "none"
+    let newsBox = document.getElementById("newsBox");
 
+    newsBox.innerHTML = `<h2>${dataMsg}</h2>`;
+    console.log(dataMsg);
+
+}
 
 
 
